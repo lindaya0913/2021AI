@@ -18,3 +18,10 @@
     3. 將缺失值作為新標籤加入
     4. 利用機器學習演算法填補缺失值：(Xgboost, regression等…)來預測並填補缺失值
     5. 尋找相似度：使用 KNN 演算法，找與某比含缺失值的資料最近的 K 筆資料，並使用這些資料的平均值來填補。
+## D4：特徵工程（Feature Engineering）
+- Feature transformation：Label encoding, One-hot encoding, Box-cox transformation, Binarization, Binning
+    - Label encoding：有順序性 (Ex. 年齡)、只會佔用一個欄位、sklearn.preprocessing.LabelEncoder、Series.map
+    - One-hot encoding：無順序性 (Ex. 國家、地點)、會佔用多個欄位，常會造成過多特徵、pandas.get_dummies
+- Feature scaling：Standarization, Normalization
+- Feature combination & construction：在一個專案中，特徵數量不宜太多，特徵太多往往會使學習難度更加困難，Feature combination 即是一個縮減特徵的方式。
+- Feature Extraction：Dimension reduction (降維), Autoencoder
