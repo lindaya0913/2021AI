@@ -25,3 +25,10 @@
 - Feature scaling：Standarization, Normalization
 - Feature combination & construction：在一個專案中，特徵數量不宜太多，特徵太多往往會使學習難度更加困難，Feature combination 即是一個縮減特徵的方式。
 - Feature Extraction：Dimension reduction (降維), Autoencoder
+## D5：基本建模&評估（Basic Modeling & Evaluation）
+- Over-fitting & Under-fitting
+- Linear regression：sklearn.linear_model.LinearRegression(fit_intercept=True, normalize=False, copy_X=True, n_jobs=None, positive=False)
+- Tree-based Algorithm：Decision Tree, Random Forest...
+    - Decision Tree：sklearn.tree.DecisionTreeRegressor(criterion='mse', splitter='best', max_depth=None, max_features=None, random_state=None, ccp_alpha=0.0)
+    - Random Forest：sklearn.ensemble.RandomForestClassifier()
+- 兩種衡量好切分的方式：Imformation gain, Gini gain
