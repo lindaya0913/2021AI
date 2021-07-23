@@ -44,11 +44,11 @@
     - Stacking：sklearn.ensemble.StackingClassifier(estimators, final_estimator=None, cv=None, stack_method='auto’n_jobs=None, passthrough=Falseverbose=0)
 2. Hyperparameter Tuning
 - 控制模型架構的參數即為 Hyperparameter (超參數)
-1. Grid Searching (貪婪搜尋)：理論上在無限的時間中可以找到最佳解，但時間不是無限的，可能剛好在低點白做工
-    - GridSearchCV(estimator, param_grid, scoring=None, n_jobs=None,refit=True, cv=None, verbose=0, return_train_score=False)
-2. Random Searching (隨機搜尋)：有機會脫離低點達到最佳解
-    - RandomizedSearchCV(estimator, param_distributions, n_iter=10, scoring=None, n_jobs=None, refit=True, cv=None, verbose=0, random_state=None, return_train_score=False)
-3. Successive halving (繼承減半)
-    - Coarse-to-fine Searching：假設模型參數對精準度的影響是和緩的，先大範圍搜尋，再從較佳的區域細部搜尋
-    - Multi-fidelity searching：配合 Coarse-to-fine searching 及 Random searching 使用，一開始以比較小的時間成本(ex. 資料量、n_estimators) 來搜尋，之後在良好區域內提昇時間成本，提高調參精準度
-    - HalvingRandomSearchCV(estimator, param_distributions, n_candidates='exhaust', factor=3, resource='n_samples', cv=5, scoring=None, refit=True, random_state=None, n_jobs=None, verbose=0)
+    1. Grid Searching (貪婪搜尋)：理論上在無限的時間中可以找到最佳解，但時間不是無限的，可能剛好在低點白做工
+        - GridSearchCV(estimator, param_grid, scoring=None, n_jobs=None,refit=True, cv=None, verbose=0, return_train_score=False)
+    2. Random Searching (隨機搜尋)：有機會脫離低點達到最佳解
+        - RandomizedSearchCV(estimator, param_distributions, n_iter=10, scoring=None, n_jobs=None, refit=True, cv=None, verbose=0, random_state=None, return_train_score=False)
+    3. Successive halving (繼承減半)
+        - Coarse-to-fine Searching：假設模型參數對精準度的影響是和緩的，先大範圍搜尋，再從較佳的區域細部搜尋
+        - Multi-fidelity searching：配合 Coarse-to-fine searching 及 Random searching 使用，一開始以比較小的時間成本(ex. 資料量、n_estimators) 來搜尋，之後在良好區域內提昇時間成本，提高調參精準度
+        - HalvingRandomSearchCV(estimator, param_distributions, n_candidates='exhaust', factor=3, resource='n_samples', cv=5, scoring=None, refit=True, random_state=None, n_jobs=None, verbose=0)
