@@ -76,3 +76,17 @@
     - RFE：`sklearn.feature_selection.RFE(estimator, n_features_to_select=None, step=1, verbose=0, importance_getter='auto’)`
     - RFECV(RFE Cross Validation)：每回合透過特徵重要性將一定數量的特徵刪除，且以交叉驗證的方式分析特徵對 score 的影響，直到剩下 k 個特徵。
     - RFECV：`sklearn.feature_selection.RFECV(estimator, step=1, min_features_to_select = 1, cv=None, scoring=None, verbose=0, n_jobs=None, importance_getter='auto’)`
+## D8：XGBoost
+- 樹型演算法 – 架構
+    - Random Forest = Bagging + Decision tree
+    - Boosting Tree = AdaBoost + Decision tree，使 adaboost 可以解決回歸問題
+    - GBDT  = Gradient Boost + Decision tree，提升運行速度及準確度
+    - XGBoost is an upgrade of GBDT
+- XGBoost vs GBDT vs Decision Tree
+    - 基礎的決策樹使用 information gain, gini factor 來選擇最佳分割點
+    - 而 GBDT 透過決策樹本身的演算法來擬合殘差
+    - 與前兩者相比，XGBoost 定義了自己的函數：gain function 來決定最佳分割點
+- 平行運算：無法平行建樹，因為 boosting 家族的演算法都是 sequential structure，然而，XGBoost 為了更快速的計算，將資料集分成好幾個 block，將計算過的 gain 等中間計算結果暫存在記憶體，使演算法在尋找最佳分割點或 sub-sampling 的時候可以快速存取運算結果；並將尋找最佳分割點這項工作平行化再次加速運行速度，使其訓練速度逼近 Random Forest 的結果
+- XGBoost：XGBoost 本身是獨立模組，但透過 xgboost.sklearn 可以讓使用者以相近 sklearn 的風格使用 XGBoost 演算法。
+    - `from xgboost.sklearn import XGBClassifier`
+    - `Model = XGBClassifier(eta, gamma, max_depth, min_child_weight, min_child_weight, subsample, lambda,alpha, colsample_by*,importance_type,  objective, scale_pos_weight)`
