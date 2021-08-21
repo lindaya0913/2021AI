@@ -90,3 +90,5 @@
 - XGBoost：XGBoost 本身是獨立模組，但透過 xgboost.sklearn 可以讓使用者以相近 sklearn 的風格使用 XGBoost 演算法。
     - `from xgboost.sklearn import XGBClassifier`
     - `Model = XGBClassifier(eta, gamma, max_depth, min_child_weight, min_child_weight, subsample, lambda,alpha, colsample_by*,importance_type,  objective, scale_pos_weight)`
+## D10：爬蟲實戰教學 (一)
+- 爬蟲的意義：自動、即時性、需要更多未被整理過的資料 
