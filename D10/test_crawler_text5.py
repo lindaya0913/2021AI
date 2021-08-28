@@ -17,8 +17,6 @@ Chrome_driver.quit()
 
 from bs4 import BeautifulSoup
 
-soup = BeautifulSoup(html, 'lxml')
-logalimg=soup.find ('img',{'title':'tw-appledaily'})
+soup = BeautifulSoup(html, "html.parser")
+logalimg = soup.find ('img',{'title':'tw-appledaily'})
 print('圖片網址：',logalimg['src'])
-
-

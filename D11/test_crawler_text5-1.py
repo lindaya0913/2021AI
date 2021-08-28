@@ -3,6 +3,7 @@
 from selenium import webdriver
 import time
 from random import uniform
+import wget 
 
 URL="https://tw.appledaily.com/life/20210815/HJSJV6YOAZA27KBUVQ674C7WRU/"
 
@@ -18,5 +19,6 @@ Chrome_driver.quit()
 from bs4 import BeautifulSoup
 
 soup = BeautifulSoup(html, "html.parser")
-pic = soup.find('img',{'title':'tw-appledaily'})
-print(pic)
+logalimg = soup.find ('img',{'title':'tw-appledaily'})
+pic_src = logalimg['src']
+wget.download(pic_src,'downloaded_pic.jpg')

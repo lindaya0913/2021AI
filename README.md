@@ -92,3 +92,4 @@
     - `Model = XGBClassifier(eta, gamma, max_depth, min_child_weight, min_child_weight, subsample, lambda,alpha, colsample_by*,importance_type,  objective, scale_pos_weight)`
 ## D10：爬蟲實戰教學 (一)
 - 爬蟲的意義：自動、即時性、需要更多未被整理過的資料 
+## D11：爬蟲實戰教學 (二)

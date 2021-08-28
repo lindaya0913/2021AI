@@ -17,7 +17,6 @@ Chrome_driver.quit()
 
 from bs4 import BeautifulSoup
 
-soup = BeautifulSoup(html, 'lxml')
-title= soup.find('div',{'class':'article__header'})
+soup = BeautifulSoup(html, "html.parser")
+title = soup.find('div',{'class':'article__header'})
 print(title.text)
-

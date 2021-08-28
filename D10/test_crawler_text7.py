@@ -13,17 +13,13 @@ html = Chrome_driver.page_source
 
 time.sleep(uniform(0.8,1)*5)
 
-# Chrome_driver.quit()
+Chrome_driver.quit()
 
-# from bs4 import BeautifulSoup
+from bs4 import BeautifulSoup
 
-# soup = BeautifulSoup(html, 'lxml')
-# textlist = soup.find_all('p',{'class': 'text--desktop text--mobile article-text-size_md  tw-max_width'})
-# # text=''
-# # for part_text in textlist: 
-# # 	text=text+part_text.text
-# print(textlist)
-
-
-
-
+soup = BeautifulSoup(html, "html.parser")
+textlist = soup.find_all('p',{'class': 'text--desktop'})
+text = ''
+for part_text in textlist: 
+	text += part_text.text
+print(text)

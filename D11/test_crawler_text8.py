@@ -18,5 +18,13 @@ Chrome_driver.quit()
 from bs4 import BeautifulSoup
 
 soup = BeautifulSoup(html, "html.parser")
-pic = soup.find('img',{'title':'tw-appledaily'})
-print(pic)
+title = soup.find('div',{'class':'article__header'})
+textlist = soup.find_all('p',{'class': 'text--desktop'})
+text = ''
+for part_text in textlist: 
+	text += part_text.text
+print(text)
+
+file = open("news.txt", "w+",encoding='utf-8')
+file.write(text)
+file.close()
